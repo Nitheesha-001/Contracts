@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition for Contract'
+define service ZUJJ_CONT_SD {
+  expose ZUJJ_CONT_C        as Contract;
+  expose zujj_cont_combined as ContractCombined;
+}

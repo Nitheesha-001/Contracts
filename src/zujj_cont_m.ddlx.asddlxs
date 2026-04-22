@@ -1,0 +1,70 @@
+@Metadata.layer: #CORE
+@UI:{headerInfo:{ typeName: 'Contract',
+                   typeNamePlural: 'Contracts',
+                   title:{ type: #STANDARD, value :'Bpnumber' } }}
+annotate entity ZUJJ_CONT_C with
+{
+  @UI.facet: [{ id: 'Contract',
+                purpose: #STANDARD,
+                type: #IDENTIFICATION_REFERENCE,
+                label: 'Contract',
+                position: 10 },
+
+                {
+                id:'Address',
+                purpose: #STANDARD,
+                type: #LINEITEM_REFERENCE,
+                label:'Booking',
+                targetElement: '_Addr',
+                position:20
+
+             } ,
+              {
+                id:'BP',
+                purpose: #STANDARD,
+                type: #LINEITEM_REFERENCE,
+                label:'Booking',
+                targetElement: '_BP',
+                position:30
+
+             }
+                ]
+
+  @UI.hidden: true
+  ContUuid;
+  @UI.lineItem:       [{ position: 10, label: 'Bpnumber' }]
+  @UI.identification: [{ position: 10, label: 'Bpnumber' }]
+  Bpnumber;
+  @UI.lineItem:       [{ position: 20, label: 'Model' }]
+  @UI.identification: [{ position: 20, label: 'Model' }]
+  Model;
+  @UI.lineItem:       [{ position: 30, label: 'Serial' }]
+  @UI.identification: [{ position: 30, label: 'Serial' }]
+  Serial;
+  @UI.lineItem:       [{ position: 40, label: 'Country' }]
+  @UI.identification: [{ position: 40, label: 'Country' }]
+  Country;
+  @UI.lineItem:       [{ position: 50, label: 'Enrolledon' }]
+  @UI.identification: [{ position: 50, label: 'Enrolledon' }]
+  Enrolledon;
+  @UI.lineItem:       [{ position: 60, label: 'Cancelledon' }]
+  @UI.identification: [{ position: 60, label: 'Cancelledon' }]
+  Cancelledon;
+  @UI.lineItem:       [{ position: 70, label: 'Status' }]
+  @UI.identification: [{ position: 70, label: 'Status' }]
+  Status;
+  @UI.lineItem:       [{ position: 80, label: 'SuspendStart' }]
+  @UI.identification: [{ position: 80, label: 'SuspendStart' }]
+  SuspendStart;
+  @UI.lineItem:       [{ position: 90, label: 'SuspendEnd' }]
+  @UI.identification: [{ position: 90, label: 'SuspendEnd' }]
+  SuspendEnd;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+  //    /* Associations */
+  //    _Addr;
+  //    _BP;
+  //
+}

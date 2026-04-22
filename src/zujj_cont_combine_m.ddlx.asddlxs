@@ -1,0 +1,63 @@
+@Metadata.layer: #CORE
+@UI:{headerInfo:{ typeName: 'Contract',
+                   typeNamePlural: 'Contracts',
+                   title:{ type: #STANDARD, value :'Bpnumber' } }}
+annotate entity zujj_cont_combined with
+{
+  @UI.hidden: true
+  cont_uuid;
+  @UI.lineItem:       [{ position: 10, label: 'Bpnumber' }]
+  @UI.identification: [{ position: 10, label: 'Bpnumber' }]
+  bpnumber;
+  @UI.lineItem:       [{ position: 20, label: 'Model' }]
+  @UI.identification: [{ position: 20, label: 'Model' }]
+  model;
+  @UI.lineItem:       [{ position: 30, label: 'Serial' }]
+  @UI.identification: [{ position: 30, label: 'Serial' }]
+  serial;
+  @UI.lineItem:       [{ position: 40, label: 'Country' }]
+  @UI.identification: [{ position: 40, label: 'Country' }]
+  country;
+  @UI.lineItem:       [{ position: 50, label: 'Enrolledon' }]
+  @UI.identification: [{ position: 50, label: 'Enrolledon' }]
+  enrolledon;
+  @UI.lineItem:       [{ position: 60, label: 'Cancelledon' }]
+  @UI.identification: [{ position: 60, label: 'Cancelledon' }]
+  cancelledon;
+  @UI.lineItem:       [{ position: 70, label: 'Status' }]
+  @UI.identification: [{ position: 70, label: 'Status' }]
+  status;
+  @UI.lineItem:       [{ position: 80, label: 'SuspendStart' }]
+  @UI.identification: [{ position: 80, label: 'SuspendStart' }]
+  suspend_start;
+  @UI.lineItem:       [{ position: 90, label: 'SuspendEnd' }]
+  @UI.identification: [{ position: 90, label: 'SuspendEnd' }]
+  suspend_end;
+  @UI.lineItem:       [{ position: 100, label: 'Firstname' }]
+  @UI.identification: [{ position: 100, label: 'Firstname' }]
+  firstname;
+  @UI.lineItem:       [{ position: 110, label: 'Lastname' }]
+  @UI.identification: [{ position: 110, label: 'Lastname' }]
+  lastname;
+  @UI.lineItem:       [{ position: 120, label: 'Email' }]
+  @UI.identification: [{ position: 120, label: 'Email' }]
+  email;
+  @UI.lineItem:       [{ position: 130, label: 'Street1' }]
+  @UI.identification: [{ position: 130, label: 'Street1' }]
+  street1;
+  @UI.lineItem:       [{ position: 140, label: 'Street2' }]
+  @UI.identification: [{ position: 140, label: 'Street2' }]
+  street2;
+  @UI.lineItem:       [{ position: 150, label: 'City' }]
+  @UI.identification: [{ position: 150, label: 'City' }]
+  city;
+  @UI.lineItem:       [{ position: 160, label: 'State' }]
+  @UI.identification: [{ position: 160, label: 'State' }]
+  state;
+  @UI.hidden: true
+  address_country;
+  @UI.lineItem:       [{ position: 170, label: 'Zipcode' }]
+  @UI.identification: [{ position: 170, label: 'Zipcode' }]
+  zipcode;
+
+}

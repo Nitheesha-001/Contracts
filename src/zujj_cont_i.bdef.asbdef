@@ -1,0 +1,87 @@
+managed implementation in class zbp_ujj_cont_i unique;
+strict ( 2 );
+with draft;
+define behavior for ZUJJ_CONT_I alias Contracts
+persistent table zujj_cont
+draft table zujj_cont_d
+lock master
+total etag LastChangedAt
+authorization master ( global, instance )
+//etag master <field_name>
+{
+  create ;
+  update;
+  delete;
+  field ( numbering : managed, readonly ) ContUuid;
+  association _Addr { create; with draft; }
+  association _BP { create; with draft; }
+
+  draft action Edit;
+  draft action Discard;
+  draft action Resume;
+  draft action Activate optimized;
+  draft determine action Prepare;
+
+
+  mapping for zujj_cont
+    {
+      ContUuid           = cont_uuid;
+      Bpnumber           = bpnumber;
+      Model              = model;
+      Serial             = serial;
+      Country            = country;
+      Enrolledon         = enrolledon;
+      Cancelledon        = cancelledon;
+      Status             = status;
+      SuspendStart       = suspend_start;
+      SuspendEnd         = suspend_end;
+      LastChangedAt      = last_changed_at;
+      LocalLastChangedAt = local_last_changed_at;
+    }
+}
+
+define behavior for ZUJJ_ADDR_I alias Address
+persistent table zujj_addr
+draft table zujj_addr_d
+lock dependent by _CONT
+authorization dependent by _CONT
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) ContUuid;
+  association _CONT { with draft; }
+
+  mapping for zujj_addr
+    {
+      ContUuid = cont_uuid;
+      Street1  = street1;
+      Street2  = street2;
+      City     = city;
+      State    = state;
+      Country  = country;
+      Zipcode  = zipcode;
+    }
+}
+
+define behavior for zujj_bp_i alias BP
+persistent table zujj_bp
+draft table zujj_bp_d
+lock dependent by _CONT
+authorization dependent by _CONT
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) ContUuid;
+  association _CONT { with draft; }
+
+  mapping for zujj_bp
+    {
+      ContUuid  = cont_uuid;
+      Firstname = firstname;
+      Lastname  = lastname;
+      Email     = email;
+    }
+
+}
