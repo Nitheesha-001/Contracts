@@ -1,12 +1,5 @@
-
-CLASS zbp_ujj_cont_i DEFINITION
-  PUBLIC
-  FINAL
-  FOR BEHAVIOR OF zujj_cont_i.
-
+CLASS zbp_ujj_cont_i DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zujj_cont_i.
 ENDCLASS.
 
-
 CLASS zbp_ujj_cont_i IMPLEMENTATION.
-
 ENDCLASS.

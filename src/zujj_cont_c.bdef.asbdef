@@ -16,6 +16,20 @@ define behavior for ZUJJ_CONT_C alias Contracts
 
   use association _Addr { create; with draft; }
   use association _BP { create; with draft; }
+}
 
+define behavior for ZUJJ_ADDR_C alias Address
+{
+  use update;
+  use delete;
 
+  use association _CONT { with draft; }
+}
+
+define behavior for ZUJJ_BP_C alias BP
+{
+  use update;
+  use delete;
+
+  use association _CONT { with draft; }
 }

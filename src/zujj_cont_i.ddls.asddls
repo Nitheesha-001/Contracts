@@ -3,8 +3,8 @@
 @Metadata.ignorePropagatedAnnotations: true
 define root view entity ZUJJ_CONT_I
   as select from zujj_cont
-  composition [0..1] of zujj_bp_i   as _BP
   composition [0..1] of ZUJJ_ADDR_I as _Addr
+  composition [0..1] of zujj_bp_i   as _BP
 {
   key cont_uuid             as ContUuid,
       bpnumber              as Bpnumber,

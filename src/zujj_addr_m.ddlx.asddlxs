@@ -26,7 +26,5 @@ annotate entity ZUJJ_ADDR_C with
   @UI.lineItem:       [{ position: 50, label: 'Zipcode' }]
   @UI.identification: [{ position: 50, label: 'Zipcode' }]
   Zipcode;
-  //  /* Associations */
-  //  _CONT;
 
 }

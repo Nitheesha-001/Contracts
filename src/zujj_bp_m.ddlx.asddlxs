@@ -18,7 +18,5 @@ annotate entity ZUJJ_BP_C with
   @UI.lineItem:       [{ position: 30, label: 'Email' }]
   @UI.identification: [{ position: 30, label: 'Email' }]
   Email;
-  //    /* Associations */
-  //    _CONT;
-
+  
 }

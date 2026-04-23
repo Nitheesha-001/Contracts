@@ -3,9 +3,9 @@
 @Metadata.ignorePropagatedAnnotations: true
 @Metadata.allowExtensions: true
 define view entity ZUJJ_ADDR_C
-  provider contract transactional_query
   as projection on ZUJJ_ADDR_I
 {
+  key AddrUuid,
   key ContUuid,
       Street1,
       Street2,
@@ -14,5 +14,5 @@ define view entity ZUJJ_ADDR_C
       Country,
       Zipcode,
       /* Associations */
-      _CONT
+      _CONT : redirected to parent ZUJJ_CONT_C
 }

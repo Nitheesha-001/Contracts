@@ -19,6 +19,6 @@ define root view entity ZUJJ_CONT_C
       LastChangedAt,
       LocalLastChangedAt,
       /* Associations */
-      _Addr,
-      _BP
+      _Addr : redirected to composition child ZUJJ_ADDR_C,
+      _BP   : redirected to composition child ZUJJ_BP_C
 }

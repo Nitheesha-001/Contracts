@@ -1,18 +1,21 @@
 managed implementation in class zbp_ujj_cont_i unique;
 strict ( 2 );
 with draft;
+
 define behavior for ZUJJ_CONT_I alias Contracts
 persistent table zujj_cont
 draft table zujj_cont_d
 lock master
 total etag LastChangedAt
-authorization master ( global, instance )
-//etag master <field_name>
+authorization master ( global )
 {
-  create ;
+  create;
   update;
   delete;
+
   field ( numbering : managed, readonly ) ContUuid;
+  field ( readonly ) LastChangedAt, LocalLastChangedAt;
+
   association _Addr { create; with draft; }
   association _BP { create; with draft; }
 
@@ -21,7 +24,6 @@ authorization master ( global, instance )
   draft action Resume;
   draft action Activate optimized;
   draft determine action Prepare;
-
 
   mapping for zujj_cont
     {
@@ -45,15 +47,18 @@ persistent table zujj_addr
 draft table zujj_addr_d
 lock dependent by _CONT
 authorization dependent by _CONT
-//etag master <field_name>
 {
   update;
   delete;
+
+  field ( numbering : managed, readonly ) AddrUuid;
   field ( readonly ) ContUuid;
+
   association _CONT { with draft; }
 
   mapping for zujj_addr
     {
+      AddrUuid = addr_uuid;
       ContUuid = cont_uuid;
       Street1  = street1;
       Street2  = street2;
@@ -69,19 +74,21 @@ persistent table zujj_bp
 draft table zujj_bp_d
 lock dependent by _CONT
 authorization dependent by _CONT
-//etag master <field_name>
 {
   update;
   delete;
+
+  field ( numbering : managed, readonly ) BpUuid;
   field ( readonly ) ContUuid;
+
   association _CONT { with draft; }
 
   mapping for zujj_bp
     {
+      BpUuid    = bp_uuid;
       ContUuid  = cont_uuid;
       Firstname = firstname;
       Lastname  = lastname;
       Email     = email;
     }
-
 }

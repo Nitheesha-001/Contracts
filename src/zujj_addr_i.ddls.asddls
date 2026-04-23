@@ -6,6 +6,7 @@ define view entity ZUJJ_ADDR_I
   as select from zujj_addr
   association to parent ZUJJ_CONT_I as _CONT on $projection.ContUuid = _CONT.ContUuid
 {
+  key addr_uuid as AddrUuid,
   key cont_uuid as ContUuid,
       street1   as Street1,
       street2   as Street2,
