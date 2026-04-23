@@ -3,6 +3,8 @@
 {
 "FROM":
 [
+"ZUJJ_ADDR_I",
+"ZUJJ_BP_I",
 "ZUJJ_CONT_I"
 ],
 "ASSOCIATED":

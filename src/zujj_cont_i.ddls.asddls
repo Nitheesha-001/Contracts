@@ -19,8 +19,8 @@ define root view entity ZUJJ_CONT_I
       last_changed_at       as LastChangedAt,
       local_last_changed_at as LocalLastChangedAt,
 
-      _BP,
-      _Addr
+      _Addr,
+      _BP
 
       //      _association_name // Make association public
 }
